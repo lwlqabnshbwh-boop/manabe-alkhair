@@ -1,0 +1,482 @@
+٠٩.١٢ ١:٥٢ م
+index.html
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة منابع الخير لتجارة واستيراد | منتجات غذائية واستهلاكية</title>
+    <meta name="description" content="شركة منابع الخير لتجارة واستيراد، متخصصة في تجارة واستيراد وتوزيع مجموعة متنوعة من المنتجات الغذائية والاستهلاكية بجودة عالية وخدمة موثوقة.">
+    <meta name="keywords" content="منابع الخير, تجارة واستيراد, منتجات غذائية, صفا, عصائر صفا, قشطة صفا, سيئون, المكلا">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="شركة منابع الخير لتجارة واستيراد">
+    <meta property="og:description" content="جودة، ثقة، وتنوع... منابع الخير شريككم في المنتجات الغذائية والاستهلاكية">
+    <meta property="og:type" content="website">
+    <!-- Tailwind CSS, FontAwesome, Cairo Font -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        brandGreen: '#138047',
+                        brandGold: '#d4af37',
+                        brandDark: '#1a3322',
+                        brandLight: '#f8faf8'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .sticky-header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); }
+        .product-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 16px 30px rgba(19, 128, 71, 0.12); }
+        .whatsapp-float { position: fixed; bottom: 25px; left: 25px; z-index: 100; }
+        .stat-card { background: linear-gradient(135deg, #ffffff 0%, #f4f8f5 100%); }
+    </style>
+</head>
+<body class="bg-brandLight text-gray-800 font-sans antialiased selection:bg-brandGreen selection:text-white">
+    <!-- 1. Header Navigation -->
+    <header class="sticky-header bg-white/95 shadow-sm border-b border-brandGreen/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="w-12 h-12 bg-brandGreen text-white rounded-2xl flex items-center justify-center font-black text-2xl shadow-md border-2 border-brandGold">
+                    م
+                </div>
+                <div>
+                    <span class="font-black text-xl text-brandDark block leading-tight">شركة منابع الخير</span>
+                    <span class="text-xs text-brandGreen font-bold">لتجارة واستيراد</span>
+                </div>
+            </div>
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-6 space-x-reverse font-bold text-gray-700">
+                <a href="#home" class="hover:text-brandGreen transition">الرئيسية</a>
+                <a href="#about" class="hover:text-brandGreen transition">من نحن</a>
+                <a href="#products" class="hover:text-brandGreen transition">منتجاتنا</a>
+                <a href="#offers" class="hover:text-brandGreen transition">العروض</a>
+                <a href="#contests" class="hover:text-brandGreen transition">المسابقات</a>
+                <a href="#markets" class="hover:text-brandGreen transition">هايبر الجوهرة</a>
+                <a href="#branches" class="hover:text-brandGreen transition">الفروع</a>
+                <a href="#contact" class="hover:text-brandGreen transition">تواصل معنا</a>
+            </nav>
+            <!-- Call to Action -->
+            <div class="hidden sm:flex items-center space-x-4 space-x-reverse">
+                <a href="https://wa.me/967778530110?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20منتجات%20شركة%20منابع%20الخير%20لتجارة%20واستيراد" target="_blank" class="bg-brandGreen hover:bg-green-700 text-white font-bold py-2.5 px-6 rounded-full flex items-center gap-2 shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                    <span>واتساب: 778530110</span>
+                </a>
+            </div>
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-btn" class="lg:hidden text-2xl text-brandDark focus:outline-none p-2" aria-label="قائمة الملاحة">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-200 px-6 pt-3 pb-6 space-y-3 font-bold text-gray-700 shadow-xl">
+            <a href="#home" class="block py-2 hover:text-brandGreen border-b border-gray-100">الرئيسية</a>
+            <a href="#about" class="block py-2 hover:text-brandGreen border-b border-gray-100">من نحن</a>
+            <a href="#products" class="block py-2 hover:text-brandGreen border-b border-gray-100">منتجاتنا</a>
+            <a href="#offers" class="block py-2 hover:text-brandGreen border-b border-gray-100">العروض</a>
+            <a href="#contests" class="block py-2 hover:text-brandGreen border-b border-gray-100">المسابقات</a>
+            <a href="#markets" class="block py-2 hover:text-brandGreen border-b border-gray-100">هايبر الجوهرة</a>
+            <a href="#branches" class="block py-2 hover:text-brandGreen border-b border-gray-100">الفروع</a>
+            <a href="#contact" class="block py-2 hover:text-brandGreen">تواصل معنا</a>
+            <a href="https://wa.me/967778530110?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20منتجات%20شركة%20منابع%20الخير%20لتجارة%20واستيراد" target="_blank" class="block bg-brandGreen text-white text-center py-3 rounded-full mt-4 font-bold shadow"><i class="fab fa-whatsapp ml-2"></i> تواصل عبر الواتساب</a>
+        </div>
+    </header>
+    <!-- 2. Hero Section -->
+    <section id="home" class="relative bg-gradient-to-br from-brandDark via-brandGreen to-emerald-950 text-white py-28 px-4 text-center overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <span class="bg-brandGold/20 text-brandGold border border-brandGold/40 font-bold px-5 py-2 rounded-full text-sm inline-block mb-6 backdrop-blur-md">
+                <i class="fas fa-check-circle ml-1"></i> شركة قوية وموثوقة
+            </span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-black mb-6 tracking-tight leading-tight">
+                منابع الخير... <span class="text-brandGold">جودة تستحق الثقة</span>
+            </h1>
+            <p class="text-lg md:text-2xl mb-10 text-gray-100 max-w-3xl mx-auto leading-relaxed font-semibold opacity-95">
+                شركة متخصصة في تجارة واستيراد وتوزيع المنتجات الغذائية والاستهلاكية، نقدم لعملائنا منتجات متنوعة بجودة عالية وخدمة موثوقة.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#products" class="bg-brandGold hover:bg-yellow-500 text-brandDark font-extrabold py-4 px-9 rounded-full shadow-2xl text-lg transition transform hover:-translate-y-1">
+                    اكتشف منتجاتنا
+                </a>
+                <a href="https://wa.me/967778530110?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20منتجات%20شركة%20منابع%20الخير%20لتجارة%20واستيراد" target="_blank" class="bg-white/10 border-2 border-white hover:bg-white hover:text-brandDark font-extrabold py-4 px-9 rounded-full shadow-2xl text-lg transition backdrop-blur-md flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-2xl"></i> تواصل معنا
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- 3. About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brandDark mb-4">من نحن</h2>
+                <div class="w-24 h-1.5 bg-brandGold mx-auto rounded-full"></div>
+                <p class="mt-6 text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-semibold">
+                    شركة منابع الخير لتجارة واستيراد هي شركة متخصصة في تجارة واستيراد وتوزيع مجموعة متنوعة من المنتجات الغذائية والاستهلاكية، وتسعى إلى توفير منتجات ذات جودة عالية والوصول بها إلى الأسواق والفروع والعملاء بكل موثوقية واحترافية.
+                </p>
+            </div>
+            <!-- Value Pillars -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+                <div class="p-6 bg-brandLight rounded-2xl shadow-sm border border-gray-100 hover:border-brandGreen transition">
+                    <div class="w-14 h-14 bg-green-100 text-brandGreen rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-brandDark">الجودة</h3>
+                </div>
+                <div class="p-6 bg-brandLight rounded-2xl shadow-sm border border-gray-100 hover:border-brandGreen transition">
+                    <div class="w-14 h-14 bg-green-100 text-brandGreen rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-brandDark">الثقة</h3>
+                </div>
+                <div class="p-6 bg-brandLight rounded-2xl shadow-sm border border-gray-100 hover:border-brandGreen transition">
+                    <div class="w-14 h-14 bg-green-100 text-brandGreen rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        <i class="fas fa-boxes-stacked"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-brandDark">التنوع</h3>
+                </div>
+                <div class="p-6 bg-brandLight rounded-2xl shadow-sm border border-gray-100 hover:border-brandGreen transition">
+                    <div class="w-14 h-14 bg-green-100 text-brandGreen rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-brandDark">سرعة التوزيع</h3>
+                </div>
+                <div class="p-6 bg-brandLight rounded-2xl shadow-sm border border-gray-100 hover:border-brandGreen transition">
+                    <div class="w-14 h-14 bg-green-100 text-brandGreen rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-brandDark">خدمة العملاء</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 4. Why Choose Us Section -->
+    <section class="py-20 bg-emerald-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">لماذا تختار منابع الخير؟</h2>
+                <div class="w-24 h-1.5 bg-brandGold mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-sm">
+                    <i class="fas fa-shield-halved text-brandGold text-3xl mb-4 block"></i>
+                    <h3 class="text-xl font-bold mb-2">جودة عالية</h3>
+                    <p class="text-gray-300">نحرص على تقديم منتجات ذات جودة موثوقة ومطابقة لأعلى المعايير.</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-sm">
+                    <i class="fas fa-cubes text-brandGold text-3xl mb-4 block"></i>
+                    <h3 class="text-xl font-bold mb-2">تنوع المنتجات</h3>
+                    <p class="text-gray-300">مجموعة متنوعة متكاملة تلبي كافة احتياجات الأسواق والعملاء.</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-sm">
+                    <i class="fas fa-briefcase text-brandGold text-3xl mb-4 block"></i>
+                    <h3 class="text-xl font-bold mb-2">خبرة في التجارة والاستيراد</h3>
+                    <p class="text-gray-300">نعمل باحترافية عالية وشراكات واسعة في مجالات التموين والتوزيع.</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-sm">
+                    <i class="fas fa-network-wired text-brandGold text-3xl mb-4 block"></i>
+                    <h3 class="text-xl font-bold mb-2">انتشار وتوزيع</h3>
+                    <p class="text-gray-300">نسعى للوصول بمنتجاتنا إلى مختلف الأسواق والمتاجر والمنافذ.</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-sm">
+                    <i class="fas fa-thumbs-up text-brandGold text-3xl mb-4 block"></i>
+                    <h3 class="text-xl font-bold mb-2">ثقة العملاء</h3>
+                    <p class="text-gray-300">نبني علاقاتنا الدائمة مع شركائنا على أساس الجودة والالتزام التام.</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-sm">
+                    <i class="fas fa-bolt text-brandGold text-3xl mb-4 block"></i>
+                    <h3 class="text-xl font-bold mb-2">خدمة متميزة</h3>
+                    <p class="text-gray-300">سهولة التواصل والتفاعل المباشر وسرعة الاستجابة لطلبات العملاء.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 5. Products Section -->
+    <section id="products" class="py-24 bg-brandLight">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-brandDark mb-4">منتجات منابع الخير</h2>
+                <div class="w-24 h-1.5 bg-brandGold mx-auto rounded-full mb-8"></div>
+                <!-- Category Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-3 font-bold">
+                    <button class="cat-btn bg-brandGreen text-white px-6 py-2.5 rounded-full shadow transition" onclick="filterCategory('all', this)">الكل</button>
+                    <button class="cat-btn bg-white text-gray-700 hover:bg-brandGreen hover:text-white px-6 py-2.5 rounded-full shadow border transition" onclick="filterCategory('juices', this)">العصائر والمشروبات</button>
+                    <button class="cat-btn bg-white text-gray-700 hover:bg-brandGreen hover:text-white px-6 py-2.5 rounded-full shadow border transition" onclick="filterCategory('canned', this)">المعلبات والحليب</button>
+                    <button class="cat-btn bg-white text-gray-700 hover:bg-brandGreen hover:text-white px-6 py-2.5 rounded-full shadow border transition" onclick="filterCategory('food', this)">الأغذية والحلويات</button>
+                    <button class="cat-btn bg-white text-gray-700 hover:bg-brandGreen hover:text-white px-6 py-2.5 rounded-full shadow border transition" onclick="filterCategory('sauces', this)">الصلصات والبهارات</button>
+                    <button class="cat-btn bg-white text-gray-700 hover:bg-brandGreen hover:text-white px-6 py-2.5 rounded-full shadow border transition" onclick="filterCategory('cleaning', this)">المنتجات الاستهلاكية</button>
+                </div>
+            </div>
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8" id="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden flex flex-col justify-between" data-category="juices">
+                    <div class="p-6 bg-gradient-to-b from-gray-50 to-white text-center">
+                        <img src="IMG-20260713-WA0006.jpg" alt="مسحوق شراب عصير صفا ليمون" class="h-52 mx-auto object-contain">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-green-100 text-brandGreen font-bold px-3 py-1 rounded-full">العصائر والمشروبات</span>
+                            <h3 class="font-bold text-xl text-brandDark mt-3 mb-2">مسحوق شراب عصير صفا (ليمون)</h3>
+                            <p class="text-gray-600 text-sm mb-4">انتعاش الليمون الطبيعي، سهل التحضير ومكونات طبيعية.</p>
+                        </div>
+                        <a href="https://wa.me/967778530110?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20منتج%20[مسحوق%20شراب%20عصير%20صفا%20ليمون]%20من%20شركة%20منابع%20الخير%20لتجارة%20واستيراد" target="_blank" class="w-full bg-brandGreen hover:bg-green-700 text-white font-bold py-3 rounded-2xl flex items-center justify-center gap-2 transition shadow">
+                            <i class="fab fa-whatsapp text-lg"></i> اطلب عبر واتساب
+                        </a>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden flex flex-col justify-between" data-category="canned">
+                    <div class="p-6 bg-gradient-to-b from-gray-50 to-white text-center">
+                        <img src="IMG-20260713-WA0007.jpg" alt="شبيهة قشطة صفا بنكهة العسل" class="h-52 mx-auto object-contain">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-3 py-1 rounded-full">المعلبات والحليب</span>
+                            <h3 class="font-bold text-xl text-brandDark mt-3 mb-2">شبيهة قشطة صفا (بنكهة العسل)</h3>
+                            <p class="text-gray-600 text-sm mb-4">لذة القشطة ونكهة العسل الطبيعي، قوام ناعم وطعم غني.</p>
+                        </div>
+                        <a href="https://wa.me/967778530110?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20منتج%20[شبيهة%20قشطة%20صفا%20بنكهة%20العسل]%20من%20شركة%20منابع%20الخير%20لتجارة%20واستيراد" target="_blank" class="w-full bg-brandGreen hover:bg-green-700 text-white font-bold py-3 rounded-2xl flex items-center justify-center gap-2 transition shadow">
+                            <i class="fab fa-whatsapp text-lg"></i> اطلب عبر واتساب
+                        </a>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden flex flex-col justify-between" data-category="food">
+                    <div class="p-6 bg-gradient-to-b from-gray-50 to-white text-center">
+                        <img src="IMG-20260713-WA0009.jpg" alt="خليط كيك صفا فانيلا" class="h-52 mx-auto object-contain">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-yellow-100 text-yellow-800 font-bold px-3 py-1 rounded-full">الأغذية والحلويات</span>
+                            <h3 class="font-bold text-xl text-brandDark mt-3 mb-2">خليط كيك صفا (فانيلا)</h3>
+                            <p class="text-gray-600 text-sm mb-4">سوبر مويست، جودة عالية وحلاوة الذوق في كل قطعة.</p>
+                        </div>
+                        <a href="https://wa.me/967778530110?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20منتج%20[خليط%20كيك%20صفا%20فانيلا]%20من%20شركة%20منابع%20الخير%20لتجارة%20واستيراد" target="_blank" class="w-full bg-brandGreen hover:bg-green-700 text-white font-bold py-3 rounded-2xl flex items-center justify-center gap-2 transition shadow">
+                            <i class="fab fa-whatsapp text-lg"></i> اطلب عبر واتساب
+                        </a>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden flex flex-col justify-between" data-category="cleaning">
+                    <div class="p-6 bg-gradient-to-b from-gray-50 to-white text-center">
+                        <img src="IMG-20260713-WA0031.jpg" alt="منظفات كلينزول" class="h-52 mx-auto object-contain">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs bg-blue-100 text-blue-800 font-bold px-3 py-1 rounded-full">المنتجات الاستهلاكية</span>
+                            <h3 class="font-bold text-xl text-brandDark mt-3 mb-2">مجموعة منظفات كلينزول</h3>
+                            <p class="text-gray-600 text-sm mb-4">نظافة وحماية وانتعاش لكل بيت، غسيل الأيدي والملابس والصحون.</p>
+                        </div>
+                        <a href="https://wa.me/967778530110?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20منتجات%20[كلينزول]%20من%20شركة%20منابع%20الخير%20لتجارة%20واستيراد" target="_blank" class="w-full bg-brandGreen hover:bg-green-700 text-white font-bold py-3 rounded-2xl flex items-center justify-center gap-2 transition shadow">
+                            <i class="fab fa-whatsapp text-lg"></i> اطلب عبر واتساب
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 6. Offers Section -->
+    <section id="offers" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-brandDark mb-4">عروض منابع الخير</h2>
+                <div class="w-24 h-1.5 bg-brandGold mx-auto rounded-full"></div>
+            </div>
+            <div class="bg-gradient-to-r from-amber-500 via-amber-600 to-brandGold rounded-3xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center justify-between shadow-xl">
+                <div class="mb-6 md:mb-0 max-w-xl">
+                    <span class="bg-white text-amber-800 font-extrabold px-4 py-1.5 rounded-full text-sm">عرض خاص للجملة</span>
+                    <h3 class="text-3xl font-extrabold mt-4 mb-3">حسم وتسهيلات خاصة للأسواق والمتاجر</h3>
+                    <p class="text-lg opacity-90">احصل على أفضل التسهيلات والأسعار الخاصة عند طلب كميات الجملة لمختلف منتجات صفا ومنابع الخير.</p>
+                </div>
+                <a href="https://wa.me/967778530110?text=السلام%20عليكم،%20أرغب%20في%20معرفة%20تفاصيل%20عروض%20الجملة%20لدى%20شركة%20منابع%20الخير" target="_blank" class="bg-brandDark hover:bg-black text-white font-bold py-4 px-8 rounded-full shadow-lg transition text-lg flex items-center gap-2">
+                    <i class="fab fa-whatsapp text-2xl"></i> اطلب العرض عبر واتساب
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- 7. Contests Section -->
+    <section id="contests" class="py-20 bg-brandLight">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-brandDark mb-4">مسابقات ومفاجآت منابع الخير</h2>
+            <div class="w-24 h-1.5 bg-brandGold mx-auto rounded-full mb-8"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8 text-lg font-semibold">تابعوا حملاتنا وجوائزنا الموسمية المستمرة لعملائنا الكرام في كافة الفروع والأسواق.</p>
+            <a href="https://wa.me/967778530110?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20المسابقات%20والفعاليات%20لدى%20منابع%20الخير" target="_blank" class="inline-block bg-brandGreen text-white font-bold py-3.5 px-8 rounded-full shadow hover:bg-green-700 transition">استفسر عن المسابقات الحالية</a>
+        </div>
+    </section>
+    <!-- 8. Hyper Al-Jawhara Section -->
+    <section id="markets" class="py-16 bg-emerald-50 border-y border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-brandDark mb-4">تواجدنا في الأسواق</h2>
+            <p class="text-xl text-brandGreen font-bold mb-4">في هايبر الجوهرة تتواجد منتجات شركة منابع الخير</p>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-6">منتجات منابع الخير متوفرة عبر الفروع والأسواق ونقاط البيع المعتمدة بأعلى مستويات الجودة.</p>
+        </div>
+    </section>
+    <!-- 9. Statistics Section -->
+    <section class="py-16 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-6 rounded-2xl border border-gray-100 stat-card shadow-sm">
+                    <div class="text-4xl font-black text-brandGreen mb-2">+50</div>
+                    <div class="text-gray-600 font-bold">صنف ومنتج متوفر</div>
+                </div>
+                <div class="p-6 rounded-2xl border border-gray-100 stat-card shadow-sm">
+                    <div class="text-4xl font-black text-brandGreen mb-2">+1000</div>
+                    <div class="text-gray-600 font-bold">نقطة بيع وسوق</div>
+                </div>
+                <div class="p-6 rounded-2xl border border-gray-100 stat-card shadow-sm">
+                    <div class="text-4xl font-black text-brandGreen mb-2">2</div>
+                    <div class="text-gray-600 font-bold">فرع رئيسي (سيئون والمكلا)</div>
+                </div>
+                <div class="p-6 rounded-2xl border border-gray-100 stat-card shadow-sm">
+                    <div class="text-4xl font-black text-brandGreen mb-2">100%</div>
+                    <div class="text-gray-600 font-bold">ثقة ورضا العملاء</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 10. Branches Section -->
+    <section id="branches" class="py-20 bg-brandLight">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-brandDark mb-4">فروعنا ونقاط التوزيع</h2>
+                <div class="w-24 h-1.5 bg-brandGold mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Branch 1 -->
+                <div class="p-8 bg-white rounded-3xl border border-gray-200 shadow-sm flex items-start gap-4">
+                    <div class="w-12 h-12 bg-brandGreen text-white rounded-2xl flex items-center justify-center font-bold text-xl shrink-0">
+                        <i class="fas fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-brandDark mb-2">فرع سيئون</h3>
+                        <p class="text-gray-600 mb-2 font-semibold"><i class="fas fa-map-marker-alt text-brandGreen ml-2"></i> شارع المطار الغربي</p>
+                        <p class="text-gray-600 mb-4 font-semibold"><i class="fas fa-phone text-brandGreen ml-2"></i> 05/400983</p>
+                        <a href="https://wa.me/967778530110" target="_blank" class="text-brandGreen font-bold hover:underline">تواصل مع فرع سيئون عبر واتساب &larr;</a>
+                    </div>
+                </div>
+                <!-- Branch 2 -->
+                <div class="p-8 bg-white rounded-3xl border border-gray-200 shadow-sm flex items-start gap-4">
+                    <div class="w-12 h-12 bg-brandGreen text-white rounded-2xl flex items-center justify-center font-bold text-xl shrink-0">
+                        <i class="fas fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-brandDark mb-2">فرع المكلا</h3>
+                        <p class="text-gray-600 mb-2 font-semibold"><i class="fas fa-map-marker-alt text-brandGreen ml-2"></i> أربعين شقة</p>
+                        <p class="text-gray-600 mb-4 font-semibold"><i class="fas fa-phone text-brandGreen ml-2"></i> 05/351442</p>
+                        <a href="https://wa.me/967778530110" target="_blank" class="text-brandGreen font-bold hover:underline">تواصل مع فرع المكلا عبر واتساب &larr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 11. Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-brandDark mb-4">تواصل مع شركة منابع الخير</h2>
+                <p class="text-gray-600 font-semibold">للاستفسارات والطلبات والتعاون التجاري، تواصل معنا مباشرة</p>
+                <div class="mt-4 font-extrabold text-brandGreen text-2xl">رقم التواصل والواتساب: 778530110</div>
+            </div>
+            <form class="bg-brandLight p-8 rounded-3xl shadow-lg border border-gray-100 space-y-6" onsubmit="event.preventDefault(); window.open('https://wa.me/967778530110?text=السلام%20عليكم،%20أنا%20' + encodeURIComponent(this.name.value) + '%20رقم%20الهاتف:%20' + encodeURIComponent(this.phone.value) + '%20الرسالة:%20' + encodeURIComponent(this.message.value), '_blank');">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">الاسم الكامل</label>
+                        <input type="text" name="name" required placeholder="أدخل اسمك" class="w-full px-4 py-3.5 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-brandGreen outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">رقم الهاتف</label>
+                        <input type="tel" name="phone" required placeholder="778530110" class="w-full px-4 py-3.5 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-brandGreen outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">الرسالة</label>
+                    <textarea name="message" rows="4" required placeholder="اكتب استفسارك هنا..." class="w-full px-4 py-3.5 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-brandGreen outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brandGreen hover:bg-green-700 text-white font-bold py-4 rounded-2xl shadow-md transition flex items-center justify-center gap-2 text-lg">
+                    <i class="fab fa-whatsapp text-2xl"></i> إرسال عبر واتساب مباشرة
+                </button>
+            </form>
+        </div>
+    </section>
+    <!-- 12. Footer -->
+    <footer class="bg-brandDark text-white pt-16 pb-8 border-t-4 border-brandGold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div>
+                <h3 class="text-2xl font-bold mb-4">شركة منابع الخير لتجارة واستيراد</h3>
+                <p class="text-gray-300 leading-relaxed font-semibold">جودة، ثقة، وتنوع... منابع الخير شريككم في المنتجات الغذائية والاستهلاكية.</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4 text-brandGold">روابط سريعة</h4>
+                <ul class="space-y-2 text-gray-300 font-semibold">
+                    <li><a href="#home" class="hover:text-white">الرئيسية</a></li>
+                    <li><a href="#about" class="hover:text-white">من نحن</a></li>
+                    <li><a href="#products" class="hover:text-white">منتجاتنا</a></li>
+                    <li><a href="#offers" class="hover:text-white">العروض</a></li>
+                    <li><a href="#branches" class="hover:text-white">الفروع</a></li>
+                    <li><a href="#contact" class="hover:text-white">تواصل معنا</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4 text-brandGold">معلومات التواصل</h4>
+                <p class="text-gray-300 mb-2 font-bold"><i class="fab fa-whatsapp text-green-400 ml-2"></i> واتساب: 778530110</p>
+                <div class="flex space-x-4 space-x-reverse mt-6 text-2xl">
+                    <a href="https://wa.me/967778530110" target="_blank" class="text-gray-300 hover:text-green-400" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-blue-500" aria-label="فيسبوك"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-pink-500" aria-label="انستغرام"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white" aria-label="تيك توك"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-gray-400 text-sm border-t border-gray-800 pt-6">
+            جميع الحقوق محفوظة © شركة منابع الخير لتجارة واستيراد
+        </div>
+    </footer>
+    <!-- Floating WhatsApp Widget -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/967778530110?text=السلام%20عليكم،%20أرغب%20في%20الاستفسار%20عن%20منتجات%20شركة%20منابع%20الخير%20لتجارة%20واستيراد" target="_blank" class="bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110" aria-label="التواصل عبر الواتساب">
+            <i class="fab fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
+    <!-- JavaScript Functions -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // Product category filter
+        function filterCategory(category, btn) {
+            const cards = document.querySelectorAll('.product-card');
+            const btns = document.querySelectorAll('.cat-btn');
+            btns.forEach(b => {
+                b.classList.remove('bg-brandGreen', 'text-white');
+                b.classList.add('bg-white', 'text-gray-700');
+            });
+            btn.classList.remove('bg-white', 'text-gray-700');
+            btn.classList.add('bg-brandGreen', 'text-white');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+```
+
